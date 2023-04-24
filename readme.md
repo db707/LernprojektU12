@@ -1,17 +1,10 @@
-# To-Do
+Prototyp
+Umschulungsverwaltungssystem (Trainer + Admins + Teilnehmer + Gruppen)
+NodeJS Backend Express + Express Handlebars
+MySQL Database
 
-DB neu modellieren !!ERD Onenote
-	-Nutzertablle
-		-STATUS ist neu (für login)
-	-Gruppe
-	!!in Beziehung bringen
-
-handlebars anpassen
-	-user
-	-group
-	-trainer
-	!! SQL Befehle anpassen
-	
-
-!!!!! Wenn Fertig
-	-> Login Bauen
+##improve
+-neues Datenbankmodell (mehr normalisieren)
+	-SQL Commands anpassen
+-mehr Validated-Input
+-Login System
