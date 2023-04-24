@@ -1,0 +1,85 @@
+<!--Nav Bar-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Ausbilder</li>
+  </ol>
+</nav>
+
+<!-- Submit Button für neuen Eintrag eines Teilnehmers (wird in die DB übertragen -->
+<div class="row">
+  <div class="col-6">
+    <h1>Ausbilder</h1>
+  </div>
+  <div class="col-3 d-flex">
+    <!-- Search-->
+    <form class="d-flex" role="search" method="POST" action="/trainer" novalidate>
+      <input class="form-control me-2" type="search" placeholder="Suche Nachnamen" name="find" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="col-3 d-flex justify-content-end">
+    <a href="/addtrainer" type="button" class="btn btn-primary align-self-center">+ Ausbilder hinzufügen</a>
+  </div>
+</div>
+
+<!-- Tabelledarstellung für Datensätze der DB-->
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Benutzername</th>
+        <th scope="col">Passwort</th>
+        <th scope="col">Status</th>
+        <th scope="col">Vorname</th>
+        <th scope="col">Nachname</th>
+        <th scope="col">Geburtsdatum</th>
+        <th scope="col">Straße</th>
+        <th scope="col">Hausnummer</th>
+        <th scope="col">Postleitzahl</th>
+        <th scope="col">Wohnort</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Telefon</th>
+        <th scope="col">Fachrichtung</th>
+        <th scope="col">Status</th>
+        <th scope="col">Schulungshistorie</th>
+        <th scope="col" class="text-end"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Fetched Datensatz ist im Array "rows" gespeichert, wird durchlaufen und in die Spalten eingetragen-->
+      {{#each rows}}
+      <tr>
+        <td scope="row">{{this.NutzerID}}</td>
+        <td>{{this.Benutzername}}</td>
+        <td>{{this.Passwort}}</td>
+        <td>{{this.Status}}</td>
+        <td>{{this.Vorname}}</td>
+        <td>{{this.Nachname}}</td>
+        <td>{{this.Geburtsdatum}}</td>
+        <td>{{this.Straße}}</td>
+        <td>{{this.Hausnummer}}</td>
+        <td>{{this.Postleitzahl}}</td>
+        <td>{{this.Wohnort}}</td>
+        <td>{{this.Email}}</td>
+        <td>{{this.Telefonnummer}}</td>
+        <td>{{this.Fachrichtung}}</td>
+        <td>{{this.Status}}</td>
+        <td>{{this.Bemerkung}}</td>
+        <!-- Funktionen für die Bearbeitung eines dargestellten Datensatzes -->
+        <td>
+          <a href="/viewtrainer/{{this.NutzerID}}" type="button" class="btn btn-light btn-small"><i
+              class="bi bi-eye"></i> View</a>
+          <a href="/edittrainer/{{this.NutzerID}}" type="button" class="btn btn-light btn-small"><i
+              class="bi bi-pencil"></i> Edit</a>
+          <a href="/deletetrainer/{{this.NutzerID}}" type="button" class="btn btn-light btn-small"><i
+              class="bi bi-person-x"></i>
+            Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+      <!-- Ende des Array Durchlaufs-->
+    </tbody>
+  </table>
+</div>

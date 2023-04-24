@@ -1,0 +1,57 @@
+<!--Nav Bar-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Gruppe</li>
+  </ol>
+</nav>
+
+<!-- Submit Button für neuen Eintrag eines Teilnehmers (wird in die DB übertragen -->
+<div class="row">
+  <div class="col-6">
+    <h1>Gruppen</h1>
+  </div>
+  <div class="col-3 d-flex">
+    <!-- Search-->
+    <form class="d-flex" role="search" method="POST" action="/group" novalidate>
+      <input class="form-control me-2" type="search" placeholder="Suche Bezeichnung" name="find" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="col-3 d-flex justify-content-end">
+    <a href="/addgroup" type="button" class="btn btn-primary align-self-center">+ Gruppe hinzufügen</a>
+  </div>
+</div>
+
+<!-- Tabelledarstellung für Datensätze der DB-->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">GruppeID</th>
+      <th scope="col">Bezeichnung</th>
+      <th scope="col">Bemerkung</th>
+      <th scope="col" class="text-end"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Fetched Datensatz ist im Array "rows" gespeichert, wird durchlaufen und in die Spalten eingetragen-->
+    {{#each rows}}
+    <tr>
+      <td scope="row">{{this.GruppeID}}</td>
+      <td>{{this.Bezeichnung}}</td>
+      <td>{{this.Bemerkung}}</td>
+      <!-- Funktionen für die Bearbeitung eines dargestellten Datensatzes -->
+      <td class="text-end">
+        <a href="/viewgroup/{{this.GruppeID}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-eye"></i> View</a>
+        <a href="/editgroup/{{this.GruppeID}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-pencil"></i> Edit</a>
+        <a href="/deletegroup/{{this.GruppeID}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-person-x"></i>
+          Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+    <!-- Ende des Array Durchlaufs-->
+  </tbody>
+</table>

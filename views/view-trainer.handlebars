@@ -1,0 +1,74 @@
+<!--Nav Bar-->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/trainer">Ausbilder</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Ausbilder anschauen</li>
+    </ol>
+</nav>
+
+<!-- Diplay Data-->
+<div class="view-user pt-5">
+    {{#each rows}}
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h3>{{this.Vorname}} {{this.Nachname}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Vorname</th>
+                        <th scope="col">Nachname</th>
+                        <th scope="col">Geburtsdatum</th>
+                        <th scope="col">Straße</th>
+                        <th scope="col">Hausnummer</th>
+                        <th scope="col">Postleitzahl</th>
+                        <th scope="col">Wohnort</th>
+                        <th scope="col">E-Mail</th>
+                        <th scope="col">Telefonnummer</th>
+                        <th scope="col">Fachrichtung</th>
+                        <th scope="col">Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">{{this.Vorname}}</td>
+                        <td scope="row">{{this.Nachname}}</td>
+                        <td scope="row">{{this.Geburtsdatum}}</td>
+                        <td scope="row">{{this.Straße}}</td>
+                        <td scope="row">{{this.Hausnummer}}</td>
+                        <td scope="row">{{this.Postleitzahl}}</td>
+                        <td scope="row">{{this.Wohnort}}</td>
+                        <td scope="row">{{this.Email}}</td>
+                        <td scope="row">{{this.Telefonnummer}}</td>
+                        <td scope="row">{{this.Fachrichtung}}</td>
+                        <td scope="row">{{this.Status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Bemerkung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">{{this.Bemerkung}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {{/each}}
+
+</div>

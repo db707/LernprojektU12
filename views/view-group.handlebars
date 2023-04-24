@@ -1,0 +1,58 @@
+<!--Nav Bar-->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/group">Gruppe</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Gruppe anschauen</li>
+    </ol>
+</nav>
+
+<!-- Diplay Data-->
+<div class="view-user pt-5">
+    <!---->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h3>{{groupInfo.Bezeichnung}} ID: {{groupInfo.GruppeID}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Vorname</th>
+                        <th scope="col">Nachname</th>
+                        <th scope="col">Fachrichtung</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each memberInfo}}
+                    <tr>
+                        <td scope="row">{{this.Vorname}}</td>
+                        <td scope="row">{{this.Nachname}}</td>
+                        <td scope="row">{{this.Fachrichtung}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Bemerkung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">{{groupInfo.Bemerkung}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!---->
+</div>
