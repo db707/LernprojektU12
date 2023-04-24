@@ -8,3 +8,6 @@ MySQL Database
 	-SQL Commands anpassen
 -mehr Validated-Input
 -Login System
+
+##credits for learning:
+https://www.youtube.com/watch?v=1aXZQcG2Y6I
